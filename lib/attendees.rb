@@ -20,7 +20,6 @@ class Attendees
       zipcode = DataScrub::scrub_zipcode(row[:zipcode])
       attendees << {:id=>id, :first_name=>first_name, :last_name=>last_name, :zipcode=>zipcode}
     end
-    binding.pry
     return attendees
   end
 

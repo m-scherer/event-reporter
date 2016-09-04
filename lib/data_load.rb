@@ -3,9 +3,8 @@ require "pry"
 
 class DataLoad
 
-  def load_file
-    contents = CSV.open 'event_attendees.csv', headers: true, header_converters: :symbol
-    binding.pry
+  def load_file(file)
+    contents = CSV.open file.to_s, headers: true, header_converters: :symbol
   end
 
 end

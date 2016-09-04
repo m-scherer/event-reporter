@@ -1,9 +1,9 @@
 require "minitest/autorun"
 require "minitest/pride"
-require "./lib/data"
+require "./lib/data_load"
 require "pry"
 
-class DataTest < Minitest::Test
+class DataLoadTest < Minitest::Test
 
   def test_if_data_instance_is_created
 

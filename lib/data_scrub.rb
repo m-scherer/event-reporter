@@ -1,6 +1,5 @@
 require "pry"
 
-
 module DataScrub
 
   def self.scrub_zipcode(zipcode)

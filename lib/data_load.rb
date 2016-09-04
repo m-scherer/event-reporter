@@ -1,10 +1,10 @@
 require "csv"
 require "pry"
 
-class DataLoad
-
-  def load_file(file)
-    contents = CSV.open file.to_s, headers: true, header_converters: :symbol
-  end
-
+module DataLoad
+    def self.load_file
+      file = ARGV[0] || "event_attendees.csv"
+      contents = CSV.open file.to_s, headers: true, header_converters: :symbol
+      return contents
+    end
 end

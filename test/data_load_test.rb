@@ -1,17 +1,13 @@
 require "minitest/autorun"
 require "minitest/pride"
-require "./lib/data"
+require "./lib/data_load"
 require "pry"
 
-class DataTest < Minitest::Test
+class DataLoadTest < Minitest::Test
+  include DataLoad
 
-  def test_if_data_instance_is_created
-
-    assert_equal DataLoad, DataLoad.new.class
+  def test_if_data_is_loaded
+    refute nil, DataLoad::load_file
   end
 
-  def test_test_if_file_has_loaded
-
-    refute nil, DataLoad.new.load_file
-  end
 end

@@ -11,4 +11,16 @@ module DataScrub
     [$1,$2,$3].join("-")
   end
 
+  def self.scrub_name(name)
+    if name == nil
+      return nil
+    else
+      name_split = name.lstrip.rstrip.split(" ")
+      name_cap = name_split.map do |name|
+        name.capitalize
+      end
+      name_cap.join(" ")
+    end
+  end
+
 end

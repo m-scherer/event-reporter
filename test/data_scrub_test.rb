@@ -27,4 +27,21 @@ class DataScrubTest < Minitest::Test
     assert_equal "123-456-7891", DataScrub::scrub_phone_number("(123)456-7891")
   end
 
+  def test_names_use_capitalize_method
+    assert_equal "Test", DataScrub::scrub_name("TEST")
+    assert_equal "Test", DataScrub::scrub_name("test")
+    assert_equal "Test", DataScrub::scrub_name("Test")
+    assert_equal "Test", DataScrub::scrub_name("tESt")
+  end
+
+  def test_names_strips_leading_and_trailing_spaces
+    assert_equal "John", DataScrub::scrub_name(" john")
+    assert_equal "John", DataScrub::scrub_name("john ")
+    assert_equal "John Paul", DataScrub::scrub_name("john paul")
+    assert_equal "John", DataScrub::scrub_name(" john ")
+    assert_equal "John Paul", DataScrub::scrub_name(" john paul ")
+
+  end
+
+
 end

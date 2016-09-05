@@ -1,6 +1,8 @@
-require "pry"
 require_relative "data_load"
 require_relative "data_scrub"
+require "pry"
+
+
 
 class Attendees
   attr_reader :data, :attendees
@@ -24,11 +26,11 @@ class Attendees
       state = row[:state]
       street = row[:street]
       phone = DataScrub::scrub_phone_number(row[:homephone])
-      # district
       @attendees << {:id=>id, :last_name=>last_name, :first_name=>first_name, :email=>email, :zipcode=>zipcode, :city=>city, :state=>state, :street=>street, :phone=>phone}
     end
     return @attendees
   end
+
 
   def search_attendees(attribute, criteria)
     found = ""

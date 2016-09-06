@@ -5,7 +5,7 @@ require "pry"
 module HelpModule
 #output possible commands
 #outpt (single) command usage
-  def help(input=nil)
+  def self.help(input=nil)
     if input == "load"
       return "Erase any loaded data and parse the specified file. "\
       "If no filename is given, default to 'event_attendees.csv'."

@@ -2,8 +2,6 @@ require_relative "data_load"
 require_relative "data_scrub"
 require "pry"
 
-
-
 class Attendees
   attr_reader :data, :attendees
   include DataLoad
@@ -32,7 +30,7 @@ class Attendees
   end
 
   def search_attendees(attribute, criteria)
-    found = ""
+    found = []
     attribute = attribute.downcase
       case attribute
       when "last_name" then

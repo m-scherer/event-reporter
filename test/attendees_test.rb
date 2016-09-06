@@ -1,5 +1,4 @@
-require "minitest/autorun"
-require "minitest/pride"
+require "./test/test_helper"
 require "./lib/attendees"
 require "./lib/data_load"
 require "pry"
@@ -55,7 +54,7 @@ class AttendeesTest < Minitest::Test
     attendees = Attendees.new
 
     assert_equal 3, attendees.search_attendees("city","Denver").length
-    assert_equal 22, attendees.search_attendees("city","New York").length
+    assert_equal 20, attendees.search_attendees("city","New York").length
     assert_equal 7, attendees.search_attendees("CITY",nil).length
   end
 

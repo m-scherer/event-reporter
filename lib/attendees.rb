@@ -15,6 +15,7 @@ class Attendees
   def create_attendees
     @attendees = []
     @data.each do |row|
+      # Attendee.new(row)
       id = row[0]
       last_name = DataScrub::scrub_name(row[:last_name])
       first_name = DataScrub::scrub_name(row[:first_name])
@@ -34,21 +35,21 @@ class Attendees
     attribute = attribute.downcase
       case attribute
       when "last_name" then
-        found  = @attendees.select { |attendee| DataScrub::scrub_name(attendee[:last_name]) == DataScrub::scrub_name(criteria) }
+        found  = @attendees.select { |attendee| attendee[:last_name] == DataScrub::scrub_name(criteria) }
       when "first_name" then
-        found  = @attendees.select { |attendee| DataScrub::scrub_name(attendee[:first_name]) == DataScrub::scrub_name(criteria) }
+        found  = @attendees.select { |attendee| attendee[:first_name] == DataScrub::scrub_name(criteria) }
       when "email" then
         found  = @attendees.select { |attendee| attendee[:email] == criteria }
       when "zipcode" then
         found  = @attendees.select { |attendee| attendee[:zipcode] == criteria }
       when "city" then
-        found  = @attendees.select { |attendee| DataScrub::scrub_name(attendee[:city]) == DataScrub::scrub_name(criteria) }
+        found  = @attendees.select { |attendee| attendee[:city] == DataScrub::scrub_name(criteria) }
       when "state" then
         found  = @attendees.select { |attendee| attendee[:state] == criteria }
       when "street" then
         found  = @attendees.select { |attendee| attendee[:street] == criteria }
       when "phone" then
-        found  = @attendees.select { |attendee| DataScrub::scrub_phone_number(attendee[:phone]) == DataScrub::scrub_phone_number(criteria) }
+        found  = @attendees.select { |attendee| attendee[:phone] == DataScrub::scrub_phone_number(criteria) }
       end
     return found
   end

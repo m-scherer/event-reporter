@@ -11,10 +11,11 @@ class Queue
     @queue = []
   end
 
-  def add_to_queue(attribute, criteria)
-      Attendees.new.search_attendees(attribute, criteria).each  do |record|
-        @queue << record
-      end
+  def add_to_queue(instance,attribute, criteria)
+    clear_queue
+    instance.search_attendees(attribute, criteria).each  do |record|
+      @queue << record
+    end
   end
 
   def clear_queue

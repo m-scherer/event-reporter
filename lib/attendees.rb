@@ -31,7 +31,6 @@ class Attendees
     return @attendees
   end
 
-
   def search_attendees(attribute, criteria)
     found = ""
     attribute = attribute.downcase

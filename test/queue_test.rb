@@ -9,13 +9,43 @@ class QueueTest < Minitest::Test
     assert_equal Queue, Queue.new.class
   end
 
-  def test_can_it_pull_all_legislators
-    attendees = Queue.new
+  def test_if_queue_has_a_stack
+    assert_equal Array, Queue.new.queue.class
+  end
 
-    assert_equal ["Cory Booker", "Leonard Lance", "Robert Menéndez"], attendees.get_legislators("07922")
-    assert_equal ["Cory Booker", "Albio Sires", "Robert Menéndez"], attendees.get_legislators("07030")
-    assert_equal ["Charles Schumer", "Charles Rangel", "Jerrold Nadler", "Kirsten Gillibrand"], attendees.get_legislators("10024")
-    assert_equal ["Cory Gardner", "Diana DeGette", "Michael Bennet"], attendees.get_legislators("80218")
+  def test_if_queue_can_be_counted
+    queue = Queue.new
+    queue.add_to_queue("first_name","John")
+    queue.add_to_queue("first_name","Greg")
+
+    assert_equal 67, queue.count_queue
+  end
+
+  def test_if_queue_can_add_to_the_stack
+    queue = Queue.new
+    queue.add_to_queue("first_name","John")
+    queue.add_to_queue("first_name","Greg")
+    queue.add_to_queue("state","CO")
+
+    assert_equal 96, queue.queue.length
+    assert_equal "CO", queue.queue.last[:state]
+  end
+
+  def test_if_the_queue_can_be_cleared
+    queue = Queue.new
+    queue.add_to_queue("state","CO")
+    queue.clear_queue
+
+    assert_equal 0, queue.count_queue
+  end
+
+  def test_can_it_pull_all_legislators
+    legislators = Queue.new
+
+    assert_equal ["Cory Booker", "Leonard Lance", "Robert Menéndez"], legislators.get_legislators("07922")
+    assert_equal ["Cory Booker", "Albio Sires", "Robert Menéndez"], legislators.get_legislators("07030")
+    assert_equal ["Charles Schumer", "Charles Rangel", "Jerrold Nadler", "Kirsten Gillibrand"], legislators.get_legislators("10024")
+    assert_equal ["Cory Gardner", "Diana DeGette", "Michael Bennet"], legislators.get_legislators("80218")
   end
 
 end

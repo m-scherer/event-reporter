@@ -38,6 +38,7 @@ class AttendeesTest < Minitest::Test
     assert_equal 4, attendees.search_attendees("first_name","Greg ").length
     assert_equal 16, attendees.search_attendees("first_name"," allison").length
     assert_equal 56, attendees.search_attendees("first_name","Emily").length
+    assert_equal 63, attendees.search_attendees("first_name","John").length
     assert_equal 0, attendees.search_attendees("first_name","Dirt").length
   end
 

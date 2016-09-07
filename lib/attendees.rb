@@ -7,8 +7,8 @@ class Attendees
   include DataLoad
   include DataScrub
 
-  def initialize
-    @data = DataLoad::load_file
+  def initialize(file)
+    @data = DataLoad::load_file(file)
     @attendees = create_attendees
   end
 
@@ -21,11 +21,12 @@ class Attendees
       first_name = DataScrub::scrub_name(row[:first_name])
       email = row[:email_address]
       zipcode = DataScrub::scrub_zipcode(row[:zipcode])
-      city = row[:city]
+      city = DataScrub::scrub_name(row[:city])
       state = row[:state]
       street = row[:street]
       phone = DataScrub::scrub_phone_number(row[:homephone])
-      @attendees << {:id=>id, :last_name=>last_name, :first_name=>first_name, :email=>email, :zipcode=>zipcode, :city=>city, :state=>state, :street=>street, :phone=>phone}
+      district = "unknown"
+      @attendees << {:id=>id, :last_name=>last_name, :first_name=>first_name, :email=>email, :zipcode=>zipcode, :city=>city, :state=>state, :street=>street, :phone=>phone, :district=>district}
     end
     return @attendees
   end
@@ -45,7 +46,7 @@ class Attendees
       when "city" then
         found  = @attendees.select { |attendee| attendee[:city] == DataScrub::scrub_name(criteria) }
       when "state" then
-        found  = @attendees.select { |attendee| attendee[:state] == criteria }
+        found  = @attendees.select { |attendee| attendee[:state] == criteria.upcase }
       when "street" then
         found  = @attendees.select { |attendee| attendee[:street] == criteria }
       when "phone" then

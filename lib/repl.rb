@@ -32,15 +32,24 @@ class Repl
       end
 
       case command
-      when "quit" then puts "Quitting"
-        when "load" then attendees = Attendees.new
-        when "find" then @queue.add_to_queue(attendees,parts[1], parts[2])
+        when "quit" then puts "Quitting"
+        when "load" then attendees = Attendees.new(parts[1])
+        when "find" then
+          if @queue.count_queue == 0
+          else
+            @queue.add_to_queue(attendees,parts[1], parts[2..-1].join(" "))
+          end
         when "queue count" then p @queue.count_queue
         when "queue clear" then @queue.clear_queue
-        when "help" then p HelpModule::help(parts[1])
+        when "help" then p HelpModule::help(parts[1..-1])
         when "queue print" then @queue.print_queue_to_terminal
         when "queue print by" then @queue.sort_by_attribute(parts[3])
-        # when "queue district" then
+        when "queue district" then
+          if @queue.count_queue > 10
+            p "Please ensure queue has 10 or less items"
+          else
+            @queue.set_district
+          end
         when "queue save to" then FileGenerator::create_csv(parts[3], @queue.queue)
         when "queue export html" then FileGenerator::create_html(parts[3], @queue.queue)
       end

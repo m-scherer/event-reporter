@@ -6,7 +6,7 @@ module FileGenerator
     def self.create_csv(filename, data)
       Dir.mkdir("output") unless Dir.exists? "output"
       CSV.open("output/"+filename, "w") do |csv|
-        csv << ["id","last_name","first_name","email","zipcode","city","state","address","phone_number"]
+        csv << ["id","last_name","first_name","email","zipcode","city","state","address","phone_number","district"]
         data.each do |record|
           csv << record.values
         end
@@ -24,8 +24,7 @@ module FileGenerator
 
     def self.create_html_file(filename, form_letter)
       Dir.mkdir("output") unless Dir.exists? "output"
-      filename = "output/queue.html"
-      File.open(filename, "w") do |file|
+      File.open("output/"+filename, "w") do |file|
         file.puts form_letter
       end
     end

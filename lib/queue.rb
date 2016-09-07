@@ -1,5 +1,7 @@
 require "sunlight/congress"
 require_relative "attendees"
+require 'open-uri'
+require 'json'
 require "pry"
 
 Sunlight::Congress.api_key = "7f37e6069038458d9d3cb6001c8d560e"
@@ -34,6 +36,23 @@ class Queue
     return legislators_listed
   end
 
+  def set_district
+    @queue.each do |record|
+      record[:district] = get_districts(record[:zipcode])
+    end
+  end
+
+  def get_districts(zipcode)
+    url = "http://congress.api.sunlightfoundation.com/districts/locate?zip=#{zipcode}&apikey=7f37e6069038458d9d3cb6001c8d560e"
+    data = JSON.parse(open(url).read)
+    data_parsed = data.values[0]
+    district_and_state = data_parsed.map do |record|
+      "#{record["state"]}: #{record["district"]}"
+    end
+    data_return = district_and_state.join(" / ")
+    return data_return
+  end
+
   def sort_by_attribute(attribute)
     sort_attribute = attribute.to_sym
     sorted = @queue.sort_by do |record|
@@ -43,10 +62,10 @@ class Queue
   end
 
   def print_queue_to_terminal(queue_print=@queue)
-    headers = "LAST NAME".ljust(15) + "FIRST NAME".ljust(15) + "EMAIL".ljust(40) + "ZIPCODE".ljust(10) + "CITY".ljust(15) + "STATE".ljust(7) + "ADDRESS".ljust(25) + "PHONE".ljust(15) + "DISTRICT".ljust(10)
+    headers = "\nLAST NAME".ljust(15) + "FIRST NAME".ljust(15) + "EMAIL".ljust(40) + "ZIPCODE".ljust(10) + "CITY".ljust(15) + "STATE".ljust(7) + "ADDRESS".ljust(25) + "PHONE".ljust(15) + "DISTRICT".ljust(10)
     puts headers
     queue_print.each do |record|
-      data =  record[:last_name].ljust(15) + record[:first_name].ljust(15) + record[:email].ljust(40) + record[:zipcode].ljust(10) + record[:city].ljust(15) + record[:state].ljust(7) + record[:street].ljust(25) + record[:phone].ljust(15)
+      data =  record[:last_name].ljust(15) + record[:first_name].ljust(15) + record[:email].ljust(40) + record[:zipcode].ljust(10) + record[:city].ljust(15) + record[:state].ljust(7) + record[:street].ljust(25) + record[:phone].ljust(15) + record[:district].ljust(10)
       puts data
     end
   end

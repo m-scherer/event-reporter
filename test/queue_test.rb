@@ -62,5 +62,13 @@ class QueueTest < Minitest::Test
     assert_equal ["Cory Gardner", "Diana DeGette", "Michael Bennet"], legislators.get_legislators("80218")
   end
 
+  def test_it_can_pull_district
+    queue = Queue.new
+
+    assert_equal "CO: 1", queue.get_districts("80218")
+    assert_equal "NJ: 7", queue.get_districts("07922")
+    assert_equal "NY: 10 / NY: 13", queue.get_districts("10024")
+    assert_equal "", queue.get_districts("")
+  end
 
 end

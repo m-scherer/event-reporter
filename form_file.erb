@@ -15,6 +15,7 @@
     <th>state</th>
     <th>address</th>
     <th>phone_number</th>
+    <th>district</th>
   </tr>
   <% data.each do |record| %>
     <tr>
@@ -26,6 +27,7 @@
       <td><%= "#{record[:state]}" %></td>
       <td><%= "#{record[:street]}" %></td>
       <td><%= "#{record[:phone]}" %></td>
+      <td><%= "#{record[:district]}" %></td>
     </tr>
     <% end %>
 </table>

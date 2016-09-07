@@ -15,7 +15,6 @@ class Attendees
   def create_attendees
     @attendees = []
     @data.each do |row|
-      # Attendee.new(row)
       id = row[0]
       last_name = DataScrub::scrub_word(row[:last_name])
       first_name = DataScrub::scrub_word(row[:first_name])

@@ -25,8 +25,8 @@ class AttendeesTest < Minitest::Test
   def test_can_it_find_attendees_by_last_name
     attendees = Attendees.new("event_attendees.csv")
 
-    assert_equal 3, attendees.search_attendees("last_name","SAUNDERS ").length
-    assert_equal 3, attendees.search_attendees("last_name"," nguyen").length
+    assert_equal 3, attendees.search_attendees("last_name","Saunders").length
+    assert_equal 3, attendees.search_attendees("last_name","Nguyen").length
     assert_equal 1, attendees.search_attendees("last_name","Kufner").length
     assert_equal 0, attendees.search_attendees("last_name","Dirt").length
   end
@@ -34,8 +34,8 @@ class AttendeesTest < Minitest::Test
   def test_can_it_find_attendees_by_first_name
     attendees = Attendees.new("event_attendees.csv")
 
-    assert_equal 4, attendees.search_attendees("first_name","Greg ").length
-    assert_equal 16, attendees.search_attendees("first_name"," allison").length
+    assert_equal 4, attendees.search_attendees("first_name","Greg").length
+    assert_equal 16, attendees.search_attendees("first_name","Allison").length
     assert_equal 56, attendees.search_attendees("first_name","Emily").length
     assert_equal 63, attendees.search_attendees("first_name","John").length
     assert_equal 0, attendees.search_attendees("first_name","Dirt").length
@@ -74,7 +74,7 @@ class AttendeesTest < Minitest::Test
   def test_can_it_find_attendees_by_phone
     attendees = Attendees.new("event_attendees.csv")
 
-    assert_equal 1, attendees.search_attendees("phone","571.232.8000").length
+    assert_equal 1, attendees.search_attendees("phone","571-232-8000").length
   end
 
 end

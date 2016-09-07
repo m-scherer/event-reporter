@@ -11,16 +11,20 @@ module DataScrub
     [$1,$2,$3].join("-")
   end
 
-  def self.scrub_name(name)
+  def self.scrub_word(name)
     if name == nil
       return nil
     else
-      name_split = name.lstrip.rstrip.split(" ")
+      name_strip = name.lstrip.rstrip.downcase
+    end
+  end
+
+    def self.capitalize_name(name)
+      name_split = name.split(" ")
       name_cap = name_split.map do |name|
         name.capitalize
       end
       name_cap.join(" ")
     end
-  end
 
 end

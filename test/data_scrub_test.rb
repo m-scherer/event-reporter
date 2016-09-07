@@ -27,18 +27,18 @@ class DataScrubTest < Minitest::Test
   end
 
   def test_names_use_capitalize_method
-    assert_equal "Test", DataScrub::scrub_name("TEST")
-    assert_equal "Test", DataScrub::scrub_name("test")
-    assert_equal "Test", DataScrub::scrub_name("Test")
-    assert_equal "Test", DataScrub::scrub_name("tESt")
+    assert_equal "Test", DataScrub::capitalize_name("TEST")
+    assert_equal "Test", DataScrub::capitalize_name("test")
+    assert_equal "Test", DataScrub::capitalize_name("Test")
+    assert_equal "Test", DataScrub::capitalize_name("tESt")
   end
 
   def test_names_strips_leading_and_trailing_spaces
-    assert_equal "John", DataScrub::scrub_name(" john")
-    assert_equal "John", DataScrub::scrub_name("john ")
-    assert_equal "John Paul", DataScrub::scrub_name("john paul")
-    assert_equal "John", DataScrub::scrub_name(" john ")
-    assert_equal "John Paul", DataScrub::scrub_name(" john paul ")
+    assert_equal "John", DataScrub::capitalize_name(DataScrub::scrub_word(" john"))
+    assert_equal "John", DataScrub::capitalize_name(DataScrub::scrub_word("john "))
+    assert_equal "John Paul", DataScrub::capitalize_name(DataScrub::scrub_word("john paul"))
+    assert_equal "John", DataScrub::capitalize_name(DataScrub::scrub_word(" john "))
+    assert_equal "John Paul", DataScrub::capitalize_name(DataScrub::scrub_word(" john paul "))
   end
 
 

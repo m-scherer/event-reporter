@@ -35,7 +35,7 @@ class Repl
         when "quit" then puts "Quitting"
         when "load" then attendees = Attendees.new(parts[1])
         when "find" then
-          if @queue.count_queue == 0
+          if attendees == nil
           else
             @queue.add_to_queue(attendees,parts[1], parts[2..-1].join(" "))
           end

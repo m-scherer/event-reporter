@@ -23,6 +23,8 @@ class Repl
         command = parts[0..2].join(" ")
       elsif parts[0] == "queue" && parts[1] == "print" && parts[2] == "by"
         command = parts[0..2].join(" ")
+      elsif parts[0] == "queue" && parts[1] == "export" && parts[2] == "html"
+        command = parts[0..2].join(" ")
       elsif parts[0] == "queue"
         command = parts[0..1].join(" ")
       else
@@ -40,7 +42,7 @@ class Repl
         when "queue print by" then @queue.sort_by_attribute(parts[3])
         # when "queue district" then
         when "queue save to" then FileGenerator::create_csv(parts[3], @queue.queue)
-        # when "queue export html" then
+        when "queue export html" then FileGenerator::create_html(parts[3], @queue.queue)
       end
     end
   end

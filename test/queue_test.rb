@@ -42,6 +42,14 @@ class QueueTest < Minitest::Test
     assert_equal 0, queue.count_queue
   end
 
+  def test_can_it_sort_by_attribute
+    queue = Queue.new
+    attendees = Attendees.new
+    queue.add_to_queue(attendees,"first_name","Greg")
+
+    assert_equal "Ali", queue.sort_by_attribute("last_name").first[:last_name]
+  end
+
   def test_can_it_pull_all_legislators
     legislators = Queue.new
 
@@ -50,5 +58,6 @@ class QueueTest < Minitest::Test
     assert_equal ["Charles Schumer", "Charles Rangel", "Jerrold Nadler", "Kirsten Gillibrand"], legislators.get_legislators("10024")
     assert_equal ["Cory Gardner", "Diana DeGette", "Michael Bennet"], legislators.get_legislators("80218")
   end
+
 
 end

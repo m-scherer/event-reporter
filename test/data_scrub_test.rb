@@ -39,7 +39,6 @@ class DataScrubTest < Minitest::Test
     assert_equal "John Paul", DataScrub::scrub_name("john paul")
     assert_equal "John", DataScrub::scrub_name(" john ")
     assert_equal "John Paul", DataScrub::scrub_name(" john paul ")
-
   end
 
 

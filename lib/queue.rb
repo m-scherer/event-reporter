@@ -34,4 +34,21 @@ class Queue
     return legislators_listed
   end
 
+  def sort_by_attribute(attribute)
+    sort_attribute = attribute.to_sym
+    sorted = @queue.sort_by do |record|
+      record[sort_attribute]
+    end
+    print_queue_to_terminal(sorted)
+  end
+
+  def print_queue_to_terminal(queue_print=@queue)
+    headers = "LAST NAME".ljust(15) + "FIRST NAME".ljust(15) + "EMAIL".ljust(40) + "ZIPCODE".ljust(10) + "CITY".ljust(15) + "STATE".ljust(7) + "ADDRESS".ljust(25) + "PHONE".ljust(15) + "DISTRICT".ljust(10)
+    puts headers
+    queue_print.each do |record|
+      data =  record[:last_name].ljust(15) + record[:first_name].ljust(15) + record[:email].ljust(40) + record[:zipcode].ljust(10) + record[:city].ljust(15) + record[:state].ljust(7) + record[:street].ljust(25) + record[:phone].ljust(15)
+      puts data
+    end
+  end
+
 end

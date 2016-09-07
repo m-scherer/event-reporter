@@ -15,7 +15,7 @@ class QueueTest < Minitest::Test
 
   def test_if_queue_can_be_counted
     queue = Queue.new
-    attendees = Attendees.new
+    attendees = Attendees.new("event_attendees.csv")
     queue.add_to_queue(attendees, "first_name","John")
     queue.add_to_queue(attendees, "first_name","Greg")
 
@@ -24,7 +24,7 @@ class QueueTest < Minitest::Test
 
   def test_if_queue_can_add_to_the_stack
     queue = Queue.new
-    attendees = Attendees.new
+    attendees = Attendees.new("event_attendees.csv")
     queue.add_to_queue(attendees,"first_name","John")
     queue.add_to_queue(attendees,"first_name","Greg")
     queue.add_to_queue(attendees,"state","CO")
@@ -35,7 +35,7 @@ class QueueTest < Minitest::Test
 
   def test_if_the_queue_can_be_cleared
     queue = Queue.new
-    attendees = Attendees.new
+    attendees = Attendees.new("event_attendees.csv")
     queue.add_to_queue(attendees,"state","CO")
     queue.clear_queue
 
@@ -44,7 +44,7 @@ class QueueTest < Minitest::Test
 
   def test_can_it_sort_by_attribute
     queue = Queue.new
-    attendees = Attendees.new
+    attendees = Attendees.new("event_attendees.csv")
     queue.add_to_queue(attendees,"first_name","John")
 
     assert_equal "Abdulkarim", queue.sort_by_attribute("last_name").first[:last_name]

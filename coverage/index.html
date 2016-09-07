@@ -14,18 +14,18 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-09-07T13:57:44-06:00">2016-09-07T13:57:44-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-09-07T15:18:16-06:00">2016-09-07T15:18:16-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">96.2%</span></span>
+    (<span class="covered_percent"><span class="green">96.58%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         9574.25
+         11524.9
        </span>
     </span> hits/line)
   </h2>
@@ -33,8 +33,8 @@
   <div>
     <b>11</b> files in total.
     <b>263</b> relevant lines. 
-    <span class="green"><b>253</b> lines covered</span> and
-    <span class="red"><b>10</b> lines missed </span>
+    <span class="green"><b>254</b> lines covered</span> and
+    <span class="red"><b>9</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,22 +52,22 @@
       
       <tr>
         <td class="strong"><a href="#656b5bbbb1f98efd4bf0a154ac3f5bdf09e14299" class="src_link" title="lib/attendees.rb">lib/attendees.rb</a></td>
-        <td class="green strong">97.3 %</td>
-        <td>58</td>
+        <td class="green strong">97.37 %</td>
+        <td>59</td>
+        <td>38</td>
         <td>37</td>
-        <td>36</td>
         <td>1</td>
-        <td>26440.8</td>
+        <td>27923.9</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#021bf16d0816b9ebfd599fd8f403ea4e650f7d5b" class="src_link" title="lib/data_load.rb">lib/data_load.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>9</td>
-        <td>6</td>
-        <td>6</td>
+        <td>10</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
-        <td>6.3</td>
+        <td>7.9</td>
       </tr>
       
       <tr>
@@ -77,15 +77,15 @@
         <td>13</td>
         <td>13</td>
         <td>0</td>
-        <td>118326.2</td>
+        <td>151419.1</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#1d61f05c4601946017f2078a2918716f0a7dbcc7" class="src_link" title="lib/file_generator.rb">lib/file_generator.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>32</td>
-        <td>22</td>
-        <td>22</td>
+        <td>31</td>
+        <td>21</td>
+        <td>21</td>
         <td>0</td>
         <td>2.3</td>
       </tr>
@@ -102,12 +102,12 @@
       
       <tr>
         <td class="strong"><a href="#8a5fd8f294a67f146235b13f12db56d02d1c2ef5" class="src_link" title="lib/queue.rb">lib/queue.rb</a></td>
-        <td class="green strong">93.48 %</td>
-        <td>74</td>
-        <td>46</td>
+        <td class="green strong">95.56 %</td>
+        <td>73</td>
+        <td>45</td>
         <td>43</td>
-        <td>3</td>
-        <td>26.9</td>
+        <td>2</td>
+        <td>27.5</td>
       </tr>
       
       <tr>
@@ -179,10 +179,10 @@
         <div class="source_table" id="656b5bbbb1f98efd4bf0a154ac3f5bdf09e14299">
   <div class="header">
     <h3>lib/attendees.rb</h3>
-    <h4><span class="green">97.3 %</span> covered</h4>
+    <h4><span class="green">97.37 %</span> covered</h4>
     <div>
-      <b>37</b> relevant lines. 
-      <span class="green"><b>36</b> lines covered</span> and
+      <b>38</b> relevant lines. 
+      <span class="green"><b>37</b> lines covered</span> and
       <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
@@ -247,13 +247,13 @@
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">  def initialize</code>
+          <code class="ruby">  def initialize(file)</code>
         </li>
       
         <li class="covered" data-hits="16" data-linenumber="11">
           <span class="hits">16</span>
           
-          <code class="ruby">    @data = DataLoad::load_file</code>
+          <code class="ruby">    @data = DataLoad::load_file(file)</code>
         </li>
       
         <li class="covered" data-hits="16" data-linenumber="12">
@@ -331,7 +331,7 @@
         <li class="covered" data-hits="82800" data-linenumber="24">
           <span class="hits">82800</span>
           
-          <code class="ruby">      city = row[:city]</code>
+          <code class="ruby">      city = DataScrub::scrub_name(row[:city])</code>
         </li>
       
         <li class="covered" data-hits="82800" data-linenumber="25">
@@ -355,175 +355,175 @@
         <li class="covered" data-hits="82800" data-linenumber="28">
           <span class="hits">82800</span>
           
-          <code class="ruby">      @attendees &lt;&lt; {:id=&gt;id, :last_name=&gt;last_name, :first_name=&gt;first_name, :email=&gt;email, :zipcode=&gt;zipcode, :city=&gt;city, :state=&gt;state, :street=&gt;street, :phone=&gt;phone, :district=&gt;&quot;&quot;}</code>
+          <code class="ruby">      district = &quot;unknown&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="covered" data-hits="82800" data-linenumber="29">
+          <span class="hits">82800</span>
+          
+          <code class="ruby">      @attendees &lt;&lt; {:id=&gt;id, :last_name=&gt;last_name, :first_name=&gt;first_name, :email=&gt;email, :zipcode=&gt;zipcode, :city=&gt;city, :state=&gt;state, :street=&gt;street, :phone=&gt;phone, :district=&gt;district}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="30">
+        <li class="covered" data-hits="16" data-linenumber="31">
           <span class="hits">16</span>
           
           <code class="ruby">    return @attendees</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">  def search_attendees(attribute, criteria)</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="34">
+        <li class="covered" data-hits="29" data-linenumber="35">
           <span class="hits">29</span>
           
           <code class="ruby">    found = []</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="35">
+        <li class="covered" data-hits="29" data-linenumber="36">
           <span class="hits">29</span>
           
           <code class="ruby">    attribute = attribute.downcase</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="36">
+        <li class="covered" data-hits="29" data-linenumber="37">
           <span class="hits">29</span>
           
           <code class="ruby">      case attribute</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">      when &quot;last_name&quot; then</code>
         </li>
       
-        <li class="covered" data-hits="20704" data-linenumber="38">
+        <li class="covered" data-hits="20704" data-linenumber="39">
           <span class="hits">20704</span>
           
           <code class="ruby">        found  = @attendees.select { |attendee| attendee[:last_name] == DataScrub::scrub_name(criteria) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">      when &quot;first_name&quot; then</code>
         </li>
       
-        <li class="covered" data-hits="56936" data-linenumber="40">
+        <li class="covered" data-hits="56936" data-linenumber="41">
           <span class="hits">56936</span>
           
           <code class="ruby">        found  = @attendees.select { |attendee| attendee[:first_name] == DataScrub::scrub_name(criteria) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">      when &quot;email&quot; then</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="42">
+        <li class="missed" data-hits="0" data-linenumber="43">
           
           
           <code class="ruby">        found  = @attendees.select { |attendee| attendee[:email] == criteria }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="44">
           
           
           <code class="ruby">      when &quot;zipcode&quot; then</code>
         </li>
       
-        <li class="covered" data-hits="20704" data-linenumber="44">
+        <li class="covered" data-hits="20704" data-linenumber="45">
           <span class="hits">20704</span>
           
           <code class="ruby">        found  = @attendees.select { |attendee| attendee[:zipcode] == criteria }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">      when &quot;city&quot; then</code>
         </li>
       
-        <li class="covered" data-hits="15528" data-linenumber="46">
+        <li class="covered" data-hits="15528" data-linenumber="47">
           <span class="hits">15528</span>
           
           <code class="ruby">        found  = @attendees.select { |attendee| attendee[:city] == DataScrub::scrub_name(criteria) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">      when &quot;state&quot; then</code>
         </li>
       
-        <li class="covered" data-hits="25880" data-linenumber="48">
+        <li class="covered" data-hits="25880" data-linenumber="49">
           <span class="hits">25880</span>
           
-          <code class="ruby">        found  = @attendees.select { |attendee| attendee[:state] == criteria }</code>
+          <code class="ruby">        found  = @attendees.select { |attendee| attendee[:state] == criteria.upcase }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby">      when &quot;street&quot; then</code>
         </li>
       
-        <li class="covered" data-hits="5176" data-linenumber="50">
+        <li class="covered" data-hits="5176" data-linenumber="51">
           <span class="hits">5176</span>
           
           <code class="ruby">        found  = @attendees.select { |attendee| attendee[:street] == criteria }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby">      when &quot;phone&quot; then</code>
         </li>
       
-        <li class="covered" data-hits="5176" data-linenumber="52">
+        <li class="covered" data-hits="5176" data-linenumber="53">
           <span class="hits">5176</span>
           
           <code class="ruby">        found  = @attendees.select { |attendee| attendee[:phone] == DataScrub::scrub_phone_number(criteria) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="54">
+        <li class="covered" data-hits="29" data-linenumber="55">
           <span class="hits">29</span>
           
           <code class="ruby">    return found</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="56">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
@@ -533,6 +533,12 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
           
           
           <code class="ruby">end</code>
@@ -547,8 +553,8 @@
     <h3>lib/data_load.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -583,28 +589,34 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    def self.load_file(file=&quot;event_attendees.csv&quot;)</code>
+          <code class="ruby">    def self.load_file(file)</code>
         </li>
       
         <li class="covered" data-hits="17" data-linenumber="6">
           <span class="hits">17</span>
           
-          <code class="ruby">      contents = CSV.open file.to_s, headers: true, header_converters: :symbol</code>
+          <code class="ruby">      file = file || &quot;event_attendees.csv&quot;</code>
         </li>
       
         <li class="covered" data-hits="17" data-linenumber="7">
           <span class="hits">17</span>
           
+          <code class="ruby">      contents = CSV.open file.to_s, headers: true, header_converters: :symbol</code>
+        </li>
+      
+        <li class="covered" data-hits="17" data-linenumber="8">
+          <span class="hits">17</span>
+          
           <code class="ruby">      return contents</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">end</code>
@@ -712,8 +724,8 @@
           <code class="ruby">  def self.scrub_name(name)</code>
         </li>
       
-        <li class="covered" data-hits="258759" data-linenumber="15">
-          <span class="hits">258759</span>
+        <li class="covered" data-hits="341559" data-linenumber="15">
+          <span class="hits">341559</span>
           
           <code class="ruby">    if name == nil</code>
         </li>
@@ -730,20 +742,20 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="253584" data-linenumber="18">
-          <span class="hits">253584</span>
+        <li class="covered" data-hits="336272" data-linenumber="18">
+          <span class="hits">336272</span>
           
           <code class="ruby">      name_split = name.lstrip.rstrip.split(&quot; &quot;)</code>
         </li>
       
-        <li class="covered" data-hits="253584" data-linenumber="19">
-          <span class="hits">253584</span>
+        <li class="covered" data-hits="336272" data-linenumber="19">
+          <span class="hits">336272</span>
           
           <code class="ruby">      name_cap = name_split.map do |name|</code>
         </li>
       
-        <li class="covered" data-hits="259961" data-linenumber="20">
-          <span class="hits">259961</span>
+        <li class="covered" data-hits="359305" data-linenumber="20">
+          <span class="hits">359305</span>
           
           <code class="ruby">        name.capitalize</code>
         </li>
@@ -754,8 +766,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="253584" data-linenumber="22">
-          <span class="hits">253584</span>
+        <li class="covered" data-hits="336272" data-linenumber="22">
+          <span class="hits">336272</span>
           
           <code class="ruby">      name_cap.join(&quot; &quot;)</code>
         </li>
@@ -793,8 +805,8 @@
     <h3>lib/file_generator.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>22</b> relevant lines. 
-      <span class="green"><b>22</b> lines covered</span> and
+      <b>21</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -853,7 +865,7 @@
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">        csv &lt;&lt; [&quot;id&quot;,&quot;last_name&quot;,&quot;first_name&quot;,&quot;email&quot;,&quot;zipcode&quot;,&quot;city&quot;,&quot;state&quot;,&quot;address&quot;,&quot;phone_number&quot;]</code>
+          <code class="ruby">        csv &lt;&lt; [&quot;id&quot;,&quot;last_name&quot;,&quot;first_name&quot;,&quot;email&quot;,&quot;zipcode&quot;,&quot;city&quot;,&quot;state&quot;,&quot;address&quot;,&quot;phone_number&quot;,&quot;district&quot;]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="10">
@@ -961,34 +973,28 @@
         <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">      filename = &quot;output/queue.html&quot;</code>
+          <code class="ruby">      File.open(&quot;output/&quot;+filename, &quot;w&quot;) do |file|</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
-          <code class="ruby">      File.open(filename, &quot;w&quot;) do |file|</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
-          
           <code class="ruby">        file.puts form_letter</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">end</code>
@@ -1247,11 +1253,11 @@
         <div class="source_table" id="8a5fd8f294a67f146235b13f12db56d02d1c2ef5">
   <div class="header">
     <h3>lib/queue.rb</h3>
-    <h4><span class="green">93.48 %</span> covered</h4>
+    <h4><span class="green">95.56 %</span> covered</h4>
     <div>
-      <b>46</b> relevant lines. 
+      <b>45</b> relevant lines. 
       <span class="green"><b>43</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -1510,193 +1516,187 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby">    binding.pry</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
+        <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
           <code class="ruby">  def get_districts(zipcode)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="47">
+        <li class="covered" data-hits="4" data-linenumber="46">
           <span class="hits">4</span>
           
           <code class="ruby">    url = &quot;http://congress.api.sunlightfoundation.com/districts/locate?zip=#{zipcode}&amp;apikey=7f37e6069038458d9d3cb6001c8d560e&quot;</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="48">
+        <li class="covered" data-hits="4" data-linenumber="47">
           <span class="hits">4</span>
           
           <code class="ruby">    data = JSON.parse(open(url).read)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="49">
+        <li class="covered" data-hits="4" data-linenumber="48">
           <span class="hits">4</span>
           
           <code class="ruby">    data_parsed = data.values[0]</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="50">
+        <li class="covered" data-hits="4" data-linenumber="49">
           <span class="hits">4</span>
           
           <code class="ruby">    district_and_state = data_parsed.map do |record|</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="51">
+        <li class="covered" data-hits="4" data-linenumber="50">
           <span class="hits">4</span>
           
           <code class="ruby">      &quot;#{record[&quot;state&quot;]}: #{record[&quot;district&quot;]}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="53">
+        <li class="covered" data-hits="4" data-linenumber="52">
           <span class="hits">4</span>
           
           <code class="ruby">    data_return = district_and_state.join(&quot; / &quot;)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="54">
+        <li class="covered" data-hits="4" data-linenumber="53">
           <span class="hits">4</span>
           
           <code class="ruby">    return data_return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="57">
+        <li class="covered" data-hits="1" data-linenumber="56">
           <span class="hits">1</span>
           
           <code class="ruby">  def sort_by_attribute(attribute)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="58">
+        <li class="covered" data-hits="4" data-linenumber="57">
           <span class="hits">4</span>
           
           <code class="ruby">    sort_attribute = attribute.to_sym</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="59">
+        <li class="covered" data-hits="4" data-linenumber="58">
           <span class="hits">4</span>
           
           <code class="ruby">    sorted = @queue.sort_by do |record|</code>
         </li>
       
-        <li class="covered" data-hits="252" data-linenumber="60">
+        <li class="covered" data-hits="252" data-linenumber="59">
           <span class="hits">252</span>
           
           <code class="ruby">      record[sort_attribute]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="62">
+        <li class="covered" data-hits="4" data-linenumber="61">
           <span class="hits">4</span>
           
           <code class="ruby">    print_queue_to_terminal(sorted)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="65">
+        <li class="covered" data-hits="1" data-linenumber="64">
           <span class="hits">1</span>
           
           <code class="ruby">  def print_queue_to_terminal(queue_print=@queue)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="66">
+        <li class="covered" data-hits="4" data-linenumber="65">
           <span class="hits">4</span>
           
-          <code class="ruby">    headers = &quot;LAST NAME&quot;.ljust(15) + &quot;FIRST NAME&quot;.ljust(15) + &quot;EMAIL&quot;.ljust(40) + &quot;ZIPCODE&quot;.ljust(10) + &quot;CITY&quot;.ljust(15) + &quot;STATE&quot;.ljust(7) + &quot;ADDRESS&quot;.ljust(25) + &quot;PHONE&quot;.ljust(15) + &quot;DISTRICT&quot;.ljust(10)</code>
+          <code class="ruby">    headers = &quot;\nLAST NAME&quot;.ljust(15) + &quot;FIRST NAME&quot;.ljust(15) + &quot;EMAIL&quot;.ljust(40) + &quot;ZIPCODE&quot;.ljust(10) + &quot;CITY&quot;.ljust(15) + &quot;STATE&quot;.ljust(7) + &quot;ADDRESS&quot;.ljust(25) + &quot;PHONE&quot;.ljust(15) + &quot;DISTRICT&quot;.ljust(10)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="67">
+        <li class="covered" data-hits="4" data-linenumber="66">
           <span class="hits">4</span>
           
           <code class="ruby">    puts headers</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="68">
+        <li class="covered" data-hits="4" data-linenumber="67">
           <span class="hits">4</span>
           
           <code class="ruby">    queue_print.each do |record|</code>
         </li>
       
-        <li class="covered" data-hits="252" data-linenumber="69">
+        <li class="covered" data-hits="252" data-linenumber="68">
           <span class="hits">252</span>
           
-          <code class="ruby">      data =  record[:last_name].ljust(15) + record[:first_name].ljust(15) + record[:email].ljust(40) + record[:zipcode].ljust(10) + record[:city].ljust(15) + record[:state].ljust(7) + record[:street].ljust(25) + record[:phone].ljust(15)</code>
+          <code class="ruby">      data =  record[:last_name].ljust(15) + record[:first_name].ljust(15) + record[:email].ljust(40) + record[:zipcode].ljust(10) + record[:city].ljust(15) + record[:state].ljust(7) + record[:street].ljust(25) + record[:phone].ljust(15) + record[:district].ljust(10)</code>
         </li>
       
-        <li class="covered" data-hits="252" data-linenumber="70">
+        <li class="covered" data-hits="252" data-linenumber="69">
           <span class="hits">252</span>
           
           <code class="ruby">      puts data</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">end</code>
@@ -1771,7 +1771,7 @@
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">    refute nil, DataLoad::load_file</code>
+          <code class="ruby">    refute nil, DataLoad::load_file(&quot;event_attendees.csv&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -2167,7 +2167,7 @@
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">    attendees = Attendees.new</code>
+          <code class="ruby">    attendees = Attendees.new(&quot;event_attendees.csv&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">
@@ -2209,7 +2209,7 @@
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">    attendees = Attendees.new</code>
+          <code class="ruby">    attendees = Attendees.new(&quot;event_attendees.csv&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
@@ -2497,7 +2497,7 @@
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">    attendees = Attendees.new</code>
+          <code class="ruby">    attendees = Attendees.new(&quot;event_attendees.csv&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
@@ -2551,7 +2551,7 @@
         <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">    attendees = Attendees.new</code>
+          <code class="ruby">    attendees = Attendees.new(&quot;event_attendees.csv&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="28">
@@ -2617,7 +2617,7 @@
         <li class="covered" data-hits="1" data-linenumber="38">
           <span class="hits">1</span>
           
-          <code class="ruby">    attendees = Attendees.new</code>
+          <code class="ruby">    attendees = Attendees.new(&quot;event_attendees.csv&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="39">
@@ -2671,7 +2671,7 @@
         <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
-          <code class="ruby">    attendees = Attendees.new</code>
+          <code class="ruby">    attendees = Attendees.new(&quot;event_attendees.csv&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="48">

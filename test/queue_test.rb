@@ -45,9 +45,12 @@ class QueueTest < Minitest::Test
   def test_can_it_sort_by_attribute
     queue = Queue.new
     attendees = Attendees.new
-    queue.add_to_queue(attendees,"first_name","Greg")
+    queue.add_to_queue(attendees,"first_name","John")
 
-    assert_equal "Ali", queue.sort_by_attribute("last_name").first[:last_name]
+    assert_equal "Abdulkarim", queue.sort_by_attribute("last_name").first[:last_name]
+    assert_equal "00000", queue.sort_by_attribute("zipcode").first[:zipcode]
+    assert_equal "Ames", queue.sort_by_attribute("city").first[:city]
+    assert_equal "CA", queue.sort_by_attribute("state").first[:state]
   end
 
   def test_can_it_pull_all_legislators

@@ -4,16 +4,8 @@ module HelpModule
 #output possible commands
 #outpt (single) command usage
   def self.help
-    p "Avaiable commands:"\
-      "\n   load"\
-      "\n   queue count"\
-      "\n   queue clear"\
-      "\n   queue district"\
-      "\n   queue print"\
-      "\n   queue print by <attribute>"\
-      "\n   queue save to <filename.csv>"\
-      "\n   queue export html <filename.html>"\
-      "\n   find <attribute> <criteria>"
+    p "Available commands: load, queue count, queue clear, queue district, queue print, queue print by <attribute>,"\
+      " queue save to <filename.csv>, queue export html <filename.html>, find <attribute> <criteria>"
   end
 
   def self.help_load
@@ -35,8 +27,8 @@ module HelpModule
   end
 
   def self.help_queue_print
-    p "Print out a tab-delimited data table with a header row following this format:/n
-      LAST NAME  FIRST NAME  EMAIL  ZIPCODE  CITY  STATE  ADDRESS  PHONE  DISTRICT"
+    p "Print out a tab-delimited data table with a header row following this format:"\
+      "LAST NAME  FIRST NAME  EMAIL  ZIPCODE  CITY  STATE  ADDRESS  PHONE  DISTRICT"
   end
 
   def self.help_queue_print_by

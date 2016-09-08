@@ -5,16 +5,8 @@ require "pry"
 class HelpModuleTest < Minitest::Test
 
   def test_print_all_possible_commands
-    assert_equal "Avaiable commands:"\
-      "\n   load"\
-      "\n   queue count"\
-      "\n   queue clear"\
-      "\n   queue district"\
-      "\n   queue print"\
-      "\n   queue print by <attribute>"\
-      "\n   queue save to <filename.csv>"\
-      "\n   queue export html <filename.html>"\
-      "\n   find <attribute> <criteria>", HelpModule.help
+    assert_equal "Available commands: load, queue count, queue clear, queue district, queue print, queue print by <attribute>,"\
+      " queue save to <filename.csv>, queue export html <filename.html>, find <attribute> <criteria>", HelpModule.help
   end
 
   def test_help_load
@@ -36,8 +28,8 @@ class HelpModuleTest < Minitest::Test
   end
 
   def test_help_queue_print
-    assert_equal "Print out a tab-delimited data table with a header row following this format:/n
-      LAST NAME  FIRST NAME  EMAIL  ZIPCODE  CITY  STATE  ADDRESS  PHONE  DISTRICT", HelpModule.help_queue_print
+    assert_equal "Print out a tab-delimited data table with a header row following this format:"\
+      "LAST NAME  FIRST NAME  EMAIL  ZIPCODE  CITY  STATE  ADDRESS  PHONE  DISTRICT", HelpModule.help_queue_print
   end
 
   def test_help_queue_print_by

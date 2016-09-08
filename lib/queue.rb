@@ -1,17 +1,13 @@
 require "sunlight/congress"
-require_relative "attendees"
-require_relative "data_scrub"
+require "./lib/attendees"
+require "./lib/data_scrub"
 require "terminal-table"
 require 'open-uri'
 require 'json'
 require "pry"
 
-Sunlight::Congress.api_key = "7f37e6069038458d9d3cb6001c8d560e"
-
-
 class Queue
   attr_reader :queue
-  include DataScrub
 
   def initialize
     @queue = []
@@ -62,13 +58,13 @@ class Queue
     rows = []
     data = []
     queue_print.each do |record|
-      data = [DataScrub::capitalize_name(record[:last_name]),
-      DataScrub::capitalize_name(record[:first_name]),
-      DataScrub::capitalize_name(record[:email]),
-      DataScrub::capitalize_name(record[:zipcode]),
-      DataScrub::capitalize_name(record[:city]),
+      data = [DataScrub.capitalize_name(record[:last_name]),
+      DataScrub.capitalize_name(record[:first_name]),
+      DataScrub.capitalize_name(record[:email]),
+      DataScrub.capitalize_name(record[:zipcode]),
+      DataScrub.capitalize_name(record[:city]),
       record[:state].upcase,
-      DataScrub::capitalize_name(record[:street]),
+      DataScrub.capitalize_name(record[:street]),
       record[:phone],
       record[:district]]
       rows << data

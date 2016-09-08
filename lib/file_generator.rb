@@ -4,7 +4,6 @@ require "erb"
 require "./lib/data_scrub"
 
 module FileGenerator
-  include DataScrub
 
     def self.create_csv(filename, data)
       CSV.open(filename, "w") do |csv|

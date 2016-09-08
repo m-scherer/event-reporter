@@ -1,9 +1,9 @@
-require "./lib/data_load"
 require "pry"
 
 module HelpModule
-
-  def self.help_empty
+#output possible commands
+#outpt (single) command usage
+  def self.help
     p "Avaiable commands:"\
       "\n   load"\
       "\n   queue count"\
@@ -19,10 +19,6 @@ module HelpModule
   def self.help_load
     p "Erase any loaded data and parse the specified file. "\
     "If no filename is given, default to 'event_attendees.csv'."
-  end
-
-  def self.help
-    p "Outputs a listing of the available individual commands"
   end
 
   def self.help_queue_count
@@ -48,7 +44,7 @@ module HelpModule
   end
 
   def self.help_save_to
-    p "Export the current queue to the specified filename as a CSV. "\
+    p "Exports the current queue to the specified filename as a CSV. "\
     "The file should should include data and headers for last name, first name, email, zipcode, city, state, address, and phone number."
   end
 

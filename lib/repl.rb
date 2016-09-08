@@ -5,8 +5,6 @@ require "./lib/file_generator"
 require "pry"
 
 class Repl
-  include HelpModule
-  include FileGenerator
 
   def initialize
     @queue = Queue.new
@@ -41,7 +39,7 @@ class Repl
           end
         when "queue count" then p @queue.count_queue
         when "queue clear" then @queue.clear_queue
-        when "help" then p HelpModule::help(parts[1..-1])
+        when "help" then HelpModule.send(parts[0..-1].join("_"))
         when "queue print" then @queue.print_queue_to_terminal
         when "queue print by" then @queue.sort_by_attribute(parts[3])
         when "queue district" then
@@ -50,8 +48,10 @@ class Repl
           else
             @queue.set_district
           end
-        when "queue save to" then FileGenerator::create_csv(parts[3], @queue.queue)
-        when "queue export html" then FileGenerator::create_html(parts[3], @queue.queue)
+        when "queue save to" then FileGenerator.create_csv(parts[3], @queue.queue)
+        when "queue export html" then FileGenerator.create_html(parts[3], @queue.queue)
+        else
+          p "Please enter a valid command"
       end
     end
   end

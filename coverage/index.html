@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-09-07T21:53:29-06:00">2016-09-07T21:53:29-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-09-08T13:42:39-06:00">2016-09-08T13:42:39-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.26%</span></span>
+    (<span class="covered_percent"><span class="green">99.25%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         9074.15
+         9211.11
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>11</b> files in total.
-    <b>269</b> relevant lines. 
-    <span class="green"><b>267</b> lines covered</span> and
+    <b>265</b> relevant lines. 
+    <span class="green"><b>263</b> lines covered</span> and
     <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -93,21 +93,21 @@
       <tr>
         <td class="strong"><a href="#f370f3c616d800336db42d374a6fab8f3a3b537c" class="src_link" title="lib/help_module.rb">lib/help_module.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>64</td>
-        <td>25</td>
-        <td>25</td>
+        <td>60</td>
+        <td>22</td>
+        <td>22</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#8a5fd8f294a67f146235b13f12db56d02d1c2ef5" class="src_link" title="lib/queue.rb">lib/queue.rb</a></td>
-        <td class="green strong">95.74 %</td>
-        <td>81</td>
-        <td>47</td>
-        <td>45</td>
+        <td class="green strong">95.65 %</td>
+        <td>78</td>
+        <td>46</td>
+        <td>44</td>
         <td>2</td>
-        <td>26.1</td>
+        <td>26.7</td>
       </tr>
       
       <tr>
@@ -143,7 +143,7 @@
       <tr>
         <td class="strong"><a href="#1c8e270a7fed326ee9aaddc64b790983e562a5c5" class="src_link" title="test/help_module_test.rb">test/help_module_test.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>74</td>
+        <td>66</td>
         <td>27</td>
         <td>27</td>
         <td>0</td>
@@ -943,8 +943,8 @@
     <h3>lib/help_module.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>25</b> relevant lines. 
-      <span class="green"><b>25</b> lines covered</span> and
+      <b>22</b> relevant lines. 
+      <span class="green"><b>22</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -955,37 +955,37 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">require &quot;./lib/data_load&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
           <code class="ruby">require &quot;pry&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="never" data-hits="" data-linenumber="2">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
           <code class="ruby">module HelpModule</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">#output possible commands</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="5">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#outpt (single) command usage</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.help_empty</code>
+          <code class="ruby">  def self.help</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
@@ -1093,13 +1093,13 @@
         <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.help</code>
+          <code class="ruby">  def self.help_queue_count</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">    p &quot;Outputs a listing of the available individual commands&quot;</code>
+          <code class="ruby">    p &quot;Outputs how many records are in the current queue&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
@@ -1117,13 +1117,13 @@
         <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.help_queue_count</code>
+          <code class="ruby">  def self.help_queue_clear</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">    p &quot;Outputs how many records are in the current queue&quot;</code>
+          <code class="ruby">    p &quot;Empties the queue&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
@@ -1141,73 +1141,73 @@
         <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.help_queue_clear</code>
+          <code class="ruby">  def self.help_queue_district</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">    p &quot;Empties the queue&quot;</code>
+          <code class="ruby">    p &quot;If there are less than 10 entries in the queue, &quot;\</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    &quot;this command will use the Sunlight API to get Congressional District information for each entry.&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="36">
           
-          <code class="ruby">  def self.help_queue_district</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">    p &quot;If there are less than 10 entries in the queue, &quot;\</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
-          
-          
-          <code class="ruby">    &quot;this command will use the Sunlight API to get Congressional District information for each entry.&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="41">
-          <span class="hits">1</span>
-          
           <code class="ruby">  def self.help_queue_print</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="38">
           <span class="hits">1</span>
           
           <code class="ruby">    p &quot;Print out a tab-delimited data table with a header row following this format:/n</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby">      LAST NAME  FIRST NAME  EMAIL  ZIPCODE  CITY  STATE  ADDRESS  PHONE  DISTRICT&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.help_queue_print_by</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    p &quot;Prints the queue sorted by the specified attribute like zipcode&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
@@ -1225,73 +1225,73 @@
         <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.help_queue_print_by</code>
+          <code class="ruby">  def self.help_save_to</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
-          <code class="ruby">    p &quot;Prints the queue sorted by the specified attribute like zipcode&quot;</code>
+          <code class="ruby">    p &quot;Exports the current queue to the specified filename as a CSV. &quot;\</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    &quot;The file should should include data and headers for last name, first name, email, zipcode, city, state, address, and phone number.&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="50">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="50">
           
-          <code class="ruby">  def self.help_save_to</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
-          <code class="ruby">    p &quot;Export the current queue to the specified filename as a CSV. &quot;\</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
-          <code class="ruby">    &quot;The file should should include data and headers for last name, first name, email, zipcode, city, state, address, and phone number.&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="53">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="55">
-          <span class="hits">1</span>
-          
           <code class="ruby">  def self.help_export_html</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="56">
+        <li class="covered" data-hits="1" data-linenumber="52">
           <span class="hits">1</span>
           
           <code class="ruby">    p &quot;Export the current queue to the specified filename as a valid HTML file.&quot;\</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby">    &quot;The file should use tables and include the data for all of the expected information.&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.help_find</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    p &quot;Load the queue with all records matching the criteria for the given attribute.&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
@@ -1306,31 +1306,7 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="60">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def self.help_find</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="61">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    p &quot;Load the queue with all records matching the criteria for the given attribute.&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="62">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby">end</code>
@@ -1343,10 +1319,10 @@
         <div class="source_table" id="8a5fd8f294a67f146235b13f12db56d02d1c2ef5">
   <div class="header">
     <h3>lib/queue.rb</h3>
-    <h4><span class="green">95.74 %</span> covered</h4>
+    <h4><span class="green">95.65 %</span> covered</h4>
     <div>
-      <b>47</b> relevant lines. 
-      <span class="green"><b>45</b> lines covered</span> and
+      <b>46</b> relevant lines. 
+      <span class="green"><b>44</b> lines covered</span> and
       <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
@@ -1405,436 +1381,418 @@
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">Sunlight::Congress.api_key = &quot;7f37e6069038458d9d3cb6001c8d560e&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
-          
           <code class="ruby">class Queue</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">  attr_reader :queue</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  include DataScrub</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="17">
+        <li class="covered" data-hits="9" data-linenumber="14">
           <span class="hits">9</span>
           
           <code class="ruby">    @queue = []</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">  def add_to_queue(instance,attribute, criteria)</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="21">
+        <li class="covered" data-hits="9" data-linenumber="18">
           <span class="hits">9</span>
           
           <code class="ruby">    clear_queue</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="22">
+        <li class="covered" data-hits="9" data-linenumber="19">
           <span class="hits">9</span>
           
           <code class="ruby">    instance.search_attendees(attribute, criteria).each  do |record|</code>
         </li>
       
-        <li class="covered" data-hits="347" data-linenumber="23">
+        <li class="covered" data-hits="347" data-linenumber="20">
           <span class="hits">347</span>
           
           <code class="ruby">      @queue &lt;&lt; record</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
           <code class="ruby">  def clear_queue</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="28">
+        <li class="covered" data-hits="10" data-linenumber="25">
           <span class="hits">10</span>
           
           <code class="ruby">    @queue = []</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
           <code class="ruby">  def count_queue</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="32">
+        <li class="covered" data-hits="2" data-linenumber="29">
           <span class="hits">2</span>
           
           <code class="ruby">    @queue.length</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">  def set_district</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
+        <li class="missed" data-hits="0" data-linenumber="33">
           
           
           <code class="ruby">    @queue.each do |record|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="37">
+        <li class="missed" data-hits="0" data-linenumber="34">
           
           
           <code class="ruby">      record[:district] = get_districts(record[:zipcode])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="41">
+        <li class="covered" data-hits="1" data-linenumber="38">
           <span class="hits">1</span>
           
           <code class="ruby">  def get_districts(zipcode)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="42">
+        <li class="covered" data-hits="4" data-linenumber="39">
           <span class="hits">4</span>
           
           <code class="ruby">    url = &quot;http://congress.api.sunlightfoundation.com/districts/locate?zip=#{zipcode}&amp;apikey=7f37e6069038458d9d3cb6001c8d560e&quot;</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="43">
+        <li class="covered" data-hits="4" data-linenumber="40">
           <span class="hits">4</span>
           
           <code class="ruby">    data = JSON.parse(open(url).read)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="44">
+        <li class="covered" data-hits="4" data-linenumber="41">
           <span class="hits">4</span>
           
           <code class="ruby">    data_parsed = data.values[0]</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="45">
+        <li class="covered" data-hits="4" data-linenumber="42">
           <span class="hits">4</span>
           
           <code class="ruby">    district_and_state = data_parsed.map do |record|</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="46">
+        <li class="covered" data-hits="4" data-linenumber="43">
           <span class="hits">4</span>
           
           <code class="ruby">      &quot;#{record[&quot;state&quot;]}: #{record[&quot;district&quot;]}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="44">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="48">
+        <li class="covered" data-hits="4" data-linenumber="45">
           <span class="hits">4</span>
           
           <code class="ruby">    data_return = district_and_state.join(&quot; / &quot;)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="49">
+        <li class="covered" data-hits="4" data-linenumber="46">
           <span class="hits">4</span>
           
           <code class="ruby">    return data_return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
           <code class="ruby">  def sort_by_attribute(attribute)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="53">
+        <li class="covered" data-hits="4" data-linenumber="50">
           <span class="hits">4</span>
           
           <code class="ruby">    sort_attribute = attribute.to_sym</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="54">
+        <li class="covered" data-hits="4" data-linenumber="51">
           <span class="hits">4</span>
           
           <code class="ruby">    sorted = @queue.sort_by do |record|</code>
         </li>
       
-        <li class="covered" data-hits="252" data-linenumber="55">
+        <li class="covered" data-hits="252" data-linenumber="52">
           <span class="hits">252</span>
           
           <code class="ruby">      record[sort_attribute]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="57">
+        <li class="covered" data-hits="4" data-linenumber="54">
           <span class="hits">4</span>
           
           <code class="ruby">    print_queue_to_terminal(sorted)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="58">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="60">
+        <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
           <code class="ruby">  def print_queue_to_terminal(queue_print=@queue)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="61">
+        <li class="covered" data-hits="4" data-linenumber="58">
           <span class="hits">4</span>
           
           <code class="ruby">    headers = [&quot;LAST NAME&quot;,&quot;FIRST NAME&quot;,&quot;EMAIL&quot;,&quot;ZIPCODE&quot;,&quot;CITY&quot;,&quot;STATE&quot;,&quot;ADDRESS&quot;,&quot;PHONE&quot;,&quot;DISTRICT&quot;]</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="62">
+        <li class="covered" data-hits="4" data-linenumber="59">
           <span class="hits">4</span>
           
           <code class="ruby">    rows = []</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="63">
+        <li class="covered" data-hits="4" data-linenumber="60">
           <span class="hits">4</span>
           
           <code class="ruby">    data = []</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="64">
+        <li class="covered" data-hits="4" data-linenumber="61">
           <span class="hits">4</span>
           
           <code class="ruby">    queue_print.each do |record|</code>
         </li>
       
-        <li class="covered" data-hits="252" data-linenumber="65">
+        <li class="covered" data-hits="252" data-linenumber="62">
           <span class="hits">252</span>
           
           <code class="ruby">      data = [DataScrub::capitalize_name(record[:last_name]),</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby">      DataScrub::capitalize_name(record[:first_name]),</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">      DataScrub::capitalize_name(record[:email]),</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby">      DataScrub::capitalize_name(record[:zipcode]),</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby">      DataScrub::capitalize_name(record[:city]),</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby">      record[:state].upcase,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby">      DataScrub::capitalize_name(record[:street]),</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">      record[:phone],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby">      record[:district]]</code>
         </li>
       
-        <li class="covered" data-hits="252" data-linenumber="74">
+        <li class="covered" data-hits="252" data-linenumber="71">
           <span class="hits">252</span>
           
           <code class="ruby">      rows &lt;&lt; data</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="75">
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="76">
+        <li class="covered" data-hits="4" data-linenumber="73">
           <span class="hits">4</span>
           
           <code class="ruby">    table = Terminal::Table.new :headings=&gt; headers, :rows =&gt; rows</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="77">
+        <li class="covered" data-hits="4" data-linenumber="74">
           <span class="hits">4</span>
           
           <code class="ruby">    puts table</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="78">
+        <li class="covered" data-hits="4" data-linenumber="75">
           <span class="hits">4</span>
           
           <code class="ruby">    return queue_print</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby">end</code>
@@ -2789,54 +2747,6 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="67">
-          
-          
-          <code class="ruby">  # def test_help_command_returns_description</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="68">
-          
-          
-          <code class="ruby">  #   assert_equal &quot;Erase any loaded data and parse the specified file. If no filename is given, default to &#39;event_attendees.csv&#39;.&quot;, HelpModule::help(&quot;load&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="69">
-          
-          
-          <code class="ruby">  #   assert_equal &quot;Outputs a listing of the available individual commands&quot;, HelpModule::help(&quot;help&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="70">
-          
-          
-          <code class="ruby">  #   assert_equal &quot;If there are less than 10 entries in the queue, this command will use the Sunlight API to get Congressional District information for each entry.&quot;, HelpModule::help(&quot;queue district&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="71">
-          
-          
-          <code class="ruby">  #   assert_equal &quot;Please enter a valid command&quot;, HelpModule::help(&quot;test&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="72">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">end</code>

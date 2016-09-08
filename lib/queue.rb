@@ -13,6 +13,19 @@ class Queue
     @queue = []
   end
 
+  def queue_math_subtract(instance,attribute,criteria)
+    instance.search_attendees(attribute, criteria).each do |record|
+      @queue.delete(record)
+    end
+    return @queue
+  end
+
+  def queue_math_add(instance,attribute,criteria)
+    instance.search_attendees(attribute, criteria).each  do |record|
+      @queue << record
+    end
+  end
+
   def add_to_queue(instance,attribute, criteria)
     clear_queue
     instance.search_attendees(attribute, criteria).each  do |record|
@@ -45,12 +58,17 @@ class Queue
     return data_return
   end
 
+  def sort_by_and_print_call(attribute)
+    sort_by_attribute(attribute)
+    print_queue_to_terminal
+  end
+
   def sort_by_attribute(attribute)
     sort_attribute = attribute.to_sym
-    sorted = @queue.sort_by do |record|
+    @queue = @queue.sort_by do |record|
       record[sort_attribute]
     end
-    print_queue_to_terminal(sorted)
+    return @queue
   end
 
   def print_queue_to_terminal(queue_print=@queue)

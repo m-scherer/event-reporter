@@ -33,6 +33,28 @@ class QueueTest < Minitest::Test
     assert_equal "co", queue.queue.last[:state]
   end
 
+  def test_if_queue_math_adds_to_the_queue
+    queue = Queue.new
+    attendees = Attendees.new("event_attendees.csv")
+    queue.queue_math_add(attendees,"first_name","John")
+    queue.queue_math_add(attendees,"first_name","Greg")
+    queue.queue_math_add(attendees,"state","CO")
+
+    assert_equal 96, queue.queue.length
+    assert_equal "co", queue.queue.last[:state]
+  end
+
+  def test_if_queue_math_adds_and_subtracts
+    queue = Queue.new
+    attendees = Attendees.new("event_attendees.csv")
+    queue.queue_math_add(attendees,"first_name","John")
+    queue.queue_math_add(attendees,"first_name","Greg")
+    queue.queue_math_subtract(attendees,"first_name","John")
+
+    assert_equal 4, queue.queue.length
+    assert_equal "dc", queue.queue.last[:state]
+  end
+
   def test_if_the_queue_can_be_cleared
     queue = Queue.new
     attendees = Attendees.new("event_attendees.csv")

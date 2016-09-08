@@ -6,7 +6,7 @@ class HelpModuleTest < Minitest::Test
 
   def test_print_all_possible_commands
     assert_equal "Available commands: load, queue count, queue clear, queue district, queue print, queue print by <attribute>,"\
-      " queue save to <filename.csv>, queue export html <filename.html>, find <attribute> <criteria>", HelpModule.help
+      " queue save to <filename.csv>, queue export html <filename.html>, find <attribute> <criteria>, add, subtract", HelpModule.help
   end
 
   def test_help_load
@@ -48,6 +48,14 @@ class HelpModuleTest < Minitest::Test
 
   def test_help_find
     assert_equal "Load the queue with all records matching the criteria for the given attribute.", HelpModule.help_find
+  end
+
+  def test_help_add
+    assert_equal "Adds to the queue", HelpModule.help_add
+  end
+
+  def test_help_subtract
+    assert_equal "Subtracts from the queue", HelpModule.help_subtract
   end
 
 end

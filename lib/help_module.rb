@@ -5,7 +5,7 @@ module HelpModule
 #outpt (single) command usage
   def self.help
     p "Available commands: load, queue count, queue clear, queue district, queue print, queue print by <attribute>,"\
-      " queue save to <filename.csv>, queue export html <filename.html>, find <attribute> <criteria>"
+      " queue save to <filename.csv>, queue export html <filename.html>, find <attribute> <criteria>, add, subtract"
   end
 
   def self.help_load
@@ -47,6 +47,14 @@ module HelpModule
 
   def self.help_find
     p "Load the queue with all records matching the criteria for the given attribute."
+  end
+
+  def self.help_add
+    p "Adds to the queue"
+  end
+
+  def self.help_subtract
+    p "Subtracts from the queue"
   end
 
 end

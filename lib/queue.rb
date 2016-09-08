@@ -1,6 +1,7 @@
 require "sunlight/congress"
 require_relative "attendees"
 require_relative "data_scrub"
+require "terminal-table"
 require 'open-uri'
 require 'json'
 require "pry"
@@ -57,20 +58,24 @@ class Queue
   end
 
   def print_queue_to_terminal(queue_print=@queue)
-    headers = "\nLAST NAME".ljust(15) + "FIRST NAME".ljust(15) + "EMAIL".ljust(40) + "ZIPCODE".ljust(10) + "CITY".ljust(15) + "STATE".ljust(7) + "ADDRESS".ljust(25) + "PHONE".ljust(15) + "DISTRICT".ljust(10)
-    puts headers
+    headers = ["LAST NAME","FIRST NAME","EMAIL","ZIPCODE","CITY","STATE","ADDRESS","PHONE","DISTRICT"]
+    rows = []
+    data = []
     queue_print.each do |record|
-      data =  DataScrub::capitalize_name(record[:last_name]).ljust(15) +
-      DataScrub::capitalize_name(record[:first_name]).ljust(15) +
-      DataScrub::capitalize_name(record[:email]).ljust(40) +
-      DataScrub::capitalize_name(record[:zipcode]).ljust(10) +
-      DataScrub::capitalize_name(record[:city]).ljust(15) +
-      record[:state].upcase.ljust(7) +
-      DataScrub::capitalize_name(record[:street]).ljust(25) +
-      record[:phone].ljust(15) +
-      record[:district].ljust(10)
-      puts data
+      data = [DataScrub::capitalize_name(record[:last_name]),
+      DataScrub::capitalize_name(record[:first_name]),
+      DataScrub::capitalize_name(record[:email]),
+      DataScrub::capitalize_name(record[:zipcode]),
+      DataScrub::capitalize_name(record[:city]),
+      record[:state].upcase,
+      DataScrub::capitalize_name(record[:street]),
+      record[:phone],
+      record[:district]]
+      rows << data
     end
+    table = Terminal::Table.new :headings=> headers, :rows => rows
+    puts table
+    return queue_print
   end
 
 end

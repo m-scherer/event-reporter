@@ -1,8 +1,0 @@
-#count the queue
-#clear the queue
-#return Sunlight API data
-#print district data
-#print the queue
-#save queue to .csv
-#save queue to .html
-#find data based on term

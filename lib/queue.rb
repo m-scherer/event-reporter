@@ -31,14 +31,6 @@ class Queue
     @queue.length
   end
 
-  def get_legislators(zipcode)
-    legislators = Sunlight::Congress::Legislator.by_zipcode(zipcode)
-    legislators_listed = legislators.map do |legislator|
-      legislator.first_name + (" ") + legislator.last_name
-    end
-    return legislators_listed
-  end
-
   def set_district
     @queue.each do |record|
       record[:district] = get_districts(record[:zipcode])
@@ -73,10 +65,10 @@ class Queue
       DataScrub::capitalize_name(record[:email]).ljust(40) +
       DataScrub::capitalize_name(record[:zipcode]).ljust(10) +
       DataScrub::capitalize_name(record[:city]).ljust(15) +
-      DataScrub::capitalize_name(record[:state]).ljust(7) +
+      record[:state].upcase.ljust(7) +
       DataScrub::capitalize_name(record[:street]).ljust(25) +
-      DataScrub::capitalize_name(record[:phone]).ljust(15) +
-      DataScrub::capitalize_name(record[:district]).ljust(10)
+      record[:phone].ljust(15) +
+      record[:district].ljust(10)
       puts data
     end
   end

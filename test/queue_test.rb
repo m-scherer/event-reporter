@@ -53,15 +53,6 @@ class QueueTest < Minitest::Test
     assert_equal "ca", queue.sort_by_attribute("state").first[:state]
   end
 
-  def test_can_it_pull_all_legislators
-    legislators = Queue.new
-
-    assert_equal ["Cory Booker", "Leonard Lance", "Robert Menéndez"], legislators.get_legislators("07922")
-    assert_equal ["Cory Booker", "Albio Sires", "Robert Menéndez"], legislators.get_legislators("07030")
-    assert_equal ["Charles Schumer", "Charles Rangel", "Jerrold Nadler", "Kirsten Gillibrand"], legislators.get_legislators("10024")
-    assert_equal ["Cory Gardner", "Diana DeGette", "Michael Bennet"], legislators.get_legislators("80218")
-  end
-
   def test_it_can_pull_district
     queue = Queue.new
 

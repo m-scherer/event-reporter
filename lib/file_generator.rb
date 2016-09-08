@@ -1,8 +1,11 @@
 require "csv"
 require "pry"
 require "erb"
+require "./lib/data_scrub"
 
 module FileGenerator
+  include DataScrub
+
     def self.create_csv(filename, data)
       Dir.mkdir("output") unless Dir.exists? "output"
       CSV.open("output/"+filename, "w") do |csv|

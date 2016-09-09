@@ -7,9 +7,10 @@ module FileGenerator
 
     def self.create_csv(filename, data)
       CSV.open(filename, "w") do |csv|
-        csv << ["id","last_name","first_name","email","zipcode","city","state","address","phone_number","district"]
+        csv << ["last_name","first_name","email","zipcode","city","state","address","phone_number","district"]
         data.each do |record|
-          csv << record.values
+
+          csv << [record.last_name, record.first_name, record.email, record.zipcode, record.city, record.state, record.street, record.phone, record.district]
         end
       end
       return filename

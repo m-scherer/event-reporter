@@ -13,6 +13,19 @@ class Queue
     @queue = []
   end
 
+  def queue_math_subtract(instance,attribute,criteria)
+    instance.search_attendees(attribute, criteria).each do |record|
+      @queue.delete(record)
+    end
+    return @queue
+  end
+
+  def queue_math_add(instance,attribute,criteria)
+    instance.search_attendees(attribute, criteria).each  do |record|
+      @queue << record
+    end
+  end
+
   def add_to_queue(instance,attribute, criteria)
     clear_queue
     instance.search_attendees(attribute, criteria).each  do |record|
@@ -30,7 +43,7 @@ class Queue
 
   def set_district
     @queue.each do |record|
-      record[:district] = get_districts(record[:zipcode])
+      record.district = get_districts(record.zipcode)
     end
   end
 
@@ -45,12 +58,16 @@ class Queue
     return data_return
   end
 
+  def sort_by_and_print_call(attribute)
+    sort_by_attribute(attribute)
+    print_queue_to_terminal
+  end
+
   def sort_by_attribute(attribute)
-    sort_attribute = attribute.to_sym
-    sorted = @queue.sort_by do |record|
-      record[sort_attribute]
+    @queue = @queue.sort_by do |record|
+      record.send(attribute)
     end
-    print_queue_to_terminal(sorted)
+    return @queue
   end
 
   def print_queue_to_terminal(queue_print=@queue)
@@ -58,15 +75,15 @@ class Queue
     rows = []
     data = []
     queue_print.each do |record|
-      data = [DataScrub.capitalize_name(record[:last_name]),
-      DataScrub.capitalize_name(record[:first_name]),
-      DataScrub.capitalize_name(record[:email]),
-      DataScrub.capitalize_name(record[:zipcode]),
-      DataScrub.capitalize_name(record[:city]),
-      record[:state].upcase,
-      DataScrub.capitalize_name(record[:street]),
-      record[:phone],
-      record[:district]]
+      data = [DataScrub.capitalize_name(record.last_name),
+      DataScrub.capitalize_name(record.first_name),
+      DataScrub.capitalize_name(record.email),
+      DataScrub.capitalize_name(record.zipcode),
+      DataScrub.capitalize_name(record.city),
+      record.state.upcase,
+      DataScrub.capitalize_name(record.street),
+      record.phone,
+      record.district]
       rows << data
     end
     table = Terminal::Table.new :headings=> headers, :rows => rows

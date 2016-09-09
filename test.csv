@@ -1,30 +1,30 @@
-id,last_name,first_name,email,zipcode,city,state,address,phone_number,district
-156,kimzey,rachel,img002@jumpstartlab.com,80134,parker,co,17272 cornerstone drive,303-895-7000,unknown
-286,riordan,sarah,ctuhspugha@jumpstartlab.com,80212,denver,co,2814 tennyson st.,720-205-8000,unknown
-796,wilson,eric,udlerd52@jumpstartlab.com,80232,lakewood,co,1664 s. yukon ct,305-322-3000,unknown
-822,flerlage,maggie,eeenfour@jumpstartlab.com,80303,boulder,co,4492 burr place,303-245-8000,unknown
-1568,jenkins,alexis,sqcoomer11@jumpstartlab.com,80212,denver,co,5020 w. moncrieff pl,928-556-3000,unknown
-1995,joyce,addison,oxke.connery@jumpstartlab.com,80222,denver,co,1540 s. bellaire st,708-829-9000,unknown
-2699,edwards,alyson,tnleat@jumpstartlab.com,06320,blank,co,blank,207-577-6000,unknown
-2725,gibbons,meagan,syz379@jumpstartlab.com,81301,durango,co,355 east 8th ave,970-382-9000,unknown
-2726,staunch,katie,mvreen08@jumpstartlab.com,81301,durango,co,2912 richard dr,970-631-3000,unknown
-2747,gall,nicole,mkan.cassidy@jumpstartlab.com,80946,colorado springs,co,902 n cascade ave wb 1916,845-551-6000,unknown
-2748,tower,paradise,fxlva@jumpstartlab.com,80946,colorado college,co,902 n cascade ave wb 1363,301-942-1000,unknown
-2749,crocker,aj,qi71511@jumpstartlab.com,80946,colorado springs,co,902 n cascade ave wb 1656,509-499-4000,unknown
-3381,caisse,leo,bapatter@jumpstartlab.com,80537,loveland,co,3788 crestone drive,724-316-9000,unknown
-3385,zatirka,rachel,ecbill5@jumpstartlab.com,80305,boulder,co,stearns west,720-217-2000,unknown
-3389,stultz,monique,lg5aanderson@jumpstartlab.com,80301,boulder,co,3030 o'neal parkway #r21,303-875-2000,unknown
-3416,tigner,cheyenna,vxndsay.becker@jumpstartlab.com,80521,fort collins,co,622 s. loomis ave.,303-489-3000,unknown
-3420,fonteyne,ye,avong.jinny@jumpstartlab.com,80521,fort collins,co,daisy st.,720-300-7000,unknown
-3428,schwartz,karen,qlCALV11@jumpstartlab.com,80521,fort collins,co,622a s. loomis st,303-489-3000,unknown
-3430,b,addison,acomblee@jumpstartlab.com,80537,loveland,co,1346 pine st.,425-736-6000,unknown
-3838,meintel-wade,sophie,flowak@jumpstartlab.com,80305,boulder,co,4789 tantra dr,970-988-5000,unknown
-4133,brown,jane,nwrnold@jumpstartlab.com,80302,boulder,co,1085 marine st,970-402-3000,unknown
-4195,younger,bethany,mt328405@jumpstartlab.com,80303,boulder,co,1300 30th st d4-12,720-470-7000,unknown
-4895,mengel,jp,qac37@jumpstartlab.com,80310,boulder,co,9016 brackett hall,719-466-7000,unknown
-4957,schneider,sara,hsndstromk@jumpstartlab.com,80903,colorado springs,co,902 n cascade,719-313-7000,unknown
-4995,dahlberg,jackie,dvn@jumpstartlab.com,80027,superior,co,1995 e coalton rd 43-204,720-891-1000,unknown
-4998,martin,melissa,lwoleman@jumpstartlab.com,80122,centennial,co,7461 s. saint paul st.,303-909-5000,unknown
-5049,horn,sam,thdy.mussleman07@jumpstartlab.com,80027,superior,co,1995 e. coalton rd. apt 43-204,303-862-1000,unknown
-5077,franklin,zach,npfordl@jumpstartlab.com,80027,superior,co,1995 e. coalton rd apt 43-204,303-862-1000,unknown
-5078,cumberdale,amanda,bmwvoicespgh@jumpstartlab.com,80027,superior,co,1995 e coalton rd 43-204,720-891-1000,unknown
+last_name,first_name,email,zipcode,city,state,address,phone_number,district
+kimzey,rachel,img002@jumpstartlab.com,80134,parker,co,17272 cornerstone drive,303-895-7000,unknown
+riordan,sarah,ctuhspugha@jumpstartlab.com,80212,denver,co,2814 tennyson st.,720-205-8000,unknown
+wilson,eric,udlerd52@jumpstartlab.com,80232,lakewood,co,1664 s. yukon ct,305-322-3000,unknown
+flerlage,maggie,eeenfour@jumpstartlab.com,80303,boulder,co,4492 burr place,303-245-8000,unknown
+jenkins,alexis,sqcoomer11@jumpstartlab.com,80212,denver,co,5020 w. moncrieff pl,928-556-3000,unknown
+joyce,addison,oxke.connery@jumpstartlab.com,80222,denver,co,1540 s. bellaire st,708-829-9000,unknown
+edwards,alyson,tnleat@jumpstartlab.com,06320,blank,co,blank,207-577-6000,unknown
+gibbons,meagan,syz379@jumpstartlab.com,81301,durango,co,355 east 8th ave,970-382-9000,unknown
+staunch,katie,mvreen08@jumpstartlab.com,81301,durango,co,2912 richard dr,970-631-3000,unknown
+gall,nicole,mkan.cassidy@jumpstartlab.com,80946,colorado springs,co,902 n cascade ave wb 1916,845-551-6000,unknown
+tower,paradise,fxlva@jumpstartlab.com,80946,colorado college,co,902 n cascade ave wb 1363,301-942-1000,unknown
+crocker,aj,qi71511@jumpstartlab.com,80946,colorado springs,co,902 n cascade ave wb 1656,509-499-4000,unknown
+caisse,leo,bapatter@jumpstartlab.com,80537,loveland,co,3788 crestone drive,724-316-9000,unknown
+zatirka,rachel,ecbill5@jumpstartlab.com,80305,boulder,co,stearns west,720-217-2000,unknown
+stultz,monique,lg5aanderson@jumpstartlab.com,80301,boulder,co,3030 o'neal parkway #r21,303-875-2000,unknown
+tigner,cheyenna,vxndsay.becker@jumpstartlab.com,80521,fort collins,co,622 s. loomis ave.,303-489-3000,unknown
+fonteyne,ye,avong.jinny@jumpstartlab.com,80521,fort collins,co,daisy st.,720-300-7000,unknown
+schwartz,karen,qlCALV11@jumpstartlab.com,80521,fort collins,co,622a s. loomis st,303-489-3000,unknown
+b,addison,acomblee@jumpstartlab.com,80537,loveland,co,1346 pine st.,425-736-6000,unknown
+meintel-wade,sophie,flowak@jumpstartlab.com,80305,boulder,co,4789 tantra dr,970-988-5000,unknown
+brown,jane,nwrnold@jumpstartlab.com,80302,boulder,co,1085 marine st,970-402-3000,unknown
+younger,bethany,mt328405@jumpstartlab.com,80303,boulder,co,1300 30th st d4-12,720-470-7000,unknown
+mengel,jp,qac37@jumpstartlab.com,80310,boulder,co,9016 brackett hall,719-466-7000,unknown
+schneider,sara,hsndstromk@jumpstartlab.com,80903,colorado springs,co,902 n cascade,719-313-7000,unknown
+dahlberg,jackie,dvn@jumpstartlab.com,80027,superior,co,1995 e coalton rd 43-204,720-891-1000,unknown
+martin,melissa,lwoleman@jumpstartlab.com,80122,centennial,co,7461 s. saint paul st.,303-909-5000,unknown
+horn,sam,thdy.mussleman07@jumpstartlab.com,80027,superior,co,1995 e. coalton rd. apt 43-204,303-862-1000,unknown
+franklin,zach,npfordl@jumpstartlab.com,80027,superior,co,1995 e. coalton rd apt 43-204,303-862-1000,unknown
+cumberdale,amanda,bmwvoicespgh@jumpstartlab.com,80027,superior,co,1995 e coalton rd 43-204,720-891-1000,unknown

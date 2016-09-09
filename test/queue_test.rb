@@ -30,7 +30,7 @@ class QueueTest < Minitest::Test
     queue.add_to_queue(attendees,"state","CO")
 
     assert_equal 29, queue.queue.length
-    assert_equal "co", queue.queue.last[:state]
+    assert_equal "co", queue.queue.last.state
   end
 
   def test_if_queue_math_adds_to_the_queue
@@ -41,7 +41,7 @@ class QueueTest < Minitest::Test
     queue.queue_math_add(attendees,"state","CO")
 
     assert_equal 96, queue.queue.length
-    assert_equal "co", queue.queue.last[:state]
+    assert_equal "co", queue.queue.last.state
   end
 
   def test_if_queue_math_adds_and_subtracts
@@ -52,7 +52,7 @@ class QueueTest < Minitest::Test
     queue.queue_math_subtract(attendees,"first_name","John")
 
     assert_equal 4, queue.queue.length
-    assert_equal "dc", queue.queue.last[:state]
+    assert_equal "dc", queue.queue.last.state
   end
 
   def test_if_the_queue_can_be_cleared
@@ -69,10 +69,10 @@ class QueueTest < Minitest::Test
     attendees = Attendees.new("event_attendees.csv")
     queue.add_to_queue(attendees,"first_name","John")
 
-    assert_equal "abdulkarim", queue.sort_by_attribute("last_name").first[:last_name]
-    assert_equal "00000", queue.sort_by_attribute("zipcode").first[:zipcode]
-    assert_equal "ames", queue.sort_by_attribute("city").first[:city]
-    assert_equal "ca", queue.sort_by_attribute("state").first[:state]
+    assert_equal "abdulkarim", queue.sort_by_attribute("last_name").first.last_name
+    assert_equal "00000", queue.sort_by_attribute("zipcode").first.zipcode
+    assert_equal "ames", queue.sort_by_attribute("city").first.city
+    assert_equal "ca", queue.sort_by_attribute("state").first.state
   end
 
   def test_it_can_pull_district

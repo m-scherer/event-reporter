@@ -39,15 +39,15 @@
   </tr>
   <% data.each do |record| %>
     <tr>
-      <td><%= "#{DataScrub.capitalize_name(record[:last_name])}" %></td>
-      <td><%= "#{DataScrub.capitalize_name(record[:first_name].capitalize)}" %></td>
-      <td><%= "#{record[:email]}" %></td>
-      <td><%= "#{record[:zipcode]}" %></td>
-      <td><%= "#{DataScrub.capitalize_name(record[:city])}" %></td>
-      <td><%= "#{record[:state].upcase}" %></td>
-      <td><%= "#{DataScrub.capitalize_name(record[:street])}" %></td>
-      <td><%= "#{record[:phone]}" %></td>
-      <td><%= "#{record[:district]}" %></td>
+      <td><%= "#{DataScrub.capitalize_name(record.last_name)}" %></td>
+      <td><%= "#{DataScrub.capitalize_name(record.first_name.capitalize)}" %></td>
+      <td><%= "#{record.email}" %></td>
+      <td><%= "#{record.zipcode}" %></td>
+      <td><%= "#{DataScrub.capitalize_name(record.city)}" %></td>
+      <td><%= "#{record.state.upcase}" %></td>
+      <td><%= "#{DataScrub.capitalize_name(record.street)}" %></td>
+      <td><%= "#{record.phone}" %></td>
+      <td><%= "#{record.district}" %></td>
     </tr>
     <% end %>
 </table>

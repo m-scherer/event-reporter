@@ -43,7 +43,7 @@ class Queue
 
   def set_district
     @queue.each do |record|
-      record[:district] = get_districts(record[:zipcode])
+      record.district = get_districts(record.zipcode)
     end
   end
 
@@ -64,9 +64,8 @@ class Queue
   end
 
   def sort_by_attribute(attribute)
-    sort_attribute = attribute.to_sym
     @queue = @queue.sort_by do |record|
-      record[sort_attribute]
+      record.send(attribute)
     end
     return @queue
   end
@@ -76,15 +75,15 @@ class Queue
     rows = []
     data = []
     queue_print.each do |record|
-      data = [DataScrub.capitalize_name(record[:last_name]),
-      DataScrub.capitalize_name(record[:first_name]),
-      DataScrub.capitalize_name(record[:email]),
-      DataScrub.capitalize_name(record[:zipcode]),
-      DataScrub.capitalize_name(record[:city]),
-      record[:state].upcase,
-      DataScrub.capitalize_name(record[:street]),
-      record[:phone],
-      record[:district]]
+      data = [DataScrub.capitalize_name(record.last_name),
+      DataScrub.capitalize_name(record.first_name),
+      DataScrub.capitalize_name(record.email),
+      DataScrub.capitalize_name(record.zipcode),
+      DataScrub.capitalize_name(record.city),
+      record.state.upcase,
+      DataScrub.capitalize_name(record.street),
+      record.phone,
+      record.district]
       rows << data
     end
     table = Terminal::Table.new :headings=> headers, :rows => rows

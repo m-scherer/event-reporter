@@ -1,41 +1,25 @@
 require "./lib/data_load"
 require "./lib/data_scrub"
+require "./lib/attendee"
 require "pry"
 
 class Attendees
   attr_reader :data, :attendees
 
   def initialize(file)
-    @data = DataLoad.load_file(file)
-    @attendees = create_attendees
-  end
-
-  def create_attendees
-    @attendees = []
-    @data.each do |row|
-      id = row[0]
-      last_name = DataScrub.scrub_word(row[:last_name])
-      first_name = DataScrub.scrub_word(row[:first_name])
-      email = row[:email_address]
-      zipcode = DataScrub.scrub_zipcode(row[:zipcode])
-      city = DataScrub.scrub_word(row[:city])
-      state = DataScrub.scrub_word(row[:state])
-      street = DataScrub.scrub_word(row[:street])
-      phone = DataScrub.scrub_phone_number(row[:homephone])
-      district = "unknown"
-      @attendees << {:id=>id, :last_name=>last_name, :first_name=>first_name, :email=>email, :zipcode=>zipcode, :city=>city, :state=>state, :street=>street, :phone=>phone, :district=>district}
+    data = DataLoad.load_file(file)
+    @attendees = data.map do |row|
+      Attendee.new(row)
     end
-    return @attendees
   end
 
   def search_attendees(attribute, criteria)
     found = []
     attribute = attribute.downcase
-    found  = @attendees.select do |attendee|
-      attendee[attribute.to_sym] == DataScrub.scrub_word(criteria)
+    found = @attendees.select do |attendee|
+      attendee if attendee.send(attribute) == DataScrub.scrub_word(criteria)
     end
     return found
   end
-
 
 end

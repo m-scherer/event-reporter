@@ -20,11 +20,15 @@ module DataScrub
   end
 
     def self.capitalize_name(name)
-      name_split = name.split(" ")
-      name_cap = name_split.map do |name|
-        name.capitalize
+      if name == nil
+        return nil
+      else
+        name_split = name.split(" ")
+        name_cap = name_split.map do |name|
+          name.capitalize
+        end
+        name_cap.join(" ")
       end
-      name_cap.join(" ")
     end
 
 end
